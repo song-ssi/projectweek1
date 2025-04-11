@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class Card : MonoBehaviour
@@ -16,19 +17,28 @@ public class Card : MonoBehaviour
     public void OpenCard()
     {
         front.SetActive(true);
-        back.SetActive(false);
+        back.SetActive(false);    
 
+    
         if (GameManager.Instance.firstCard == null)
         {
             GameManager.Instance.firstCard = this;
+            GameManager.Instance.Save();
+
         }
         else
         {
             GameManager.Instance.secondCard = this;
             GameManager.Instance.IsMatch();
         }
-    }
     
+    }
+    // public void SaveCardImage()
+    // {
+    //     GameManager.Instance.firstCard.idx = firstCardidx;
+    //     firstCardidx = card.GetCard();  // 첫 번째 카드의 이미지를 저장
+
+    // }
     public void DestroyCard()
     {
         Invoke(nameof(DestroyCardInvoke), 0.8f);
