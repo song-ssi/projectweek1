@@ -12,8 +12,10 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [SerializeField] private TextMeshProUGUI timeText;
-    [SerializeField] private float passedTime;
     [SerializeField] private TextMeshProUGUI levelText;
+    [SerializeField] private TextMeshProUGUI failCountText;
+    [SerializeField] private TextMeshProUGUI itemCountText;
+    [SerializeField] private float passedTime;
     public RectTransform timeBar;
     public GameObject endText;
     public Card firstCard;
@@ -21,9 +23,10 @@ public class GameManager : MonoBehaviour
     public int saveidx;
     public int cardCount;
     public int firstCardidx;
-    private int failCount = 10;
+    private int failCount;
     public int level = 1;
-    float time = 30.0f;
+    public int itemcount = 10;
+    float time;
 
 
     private void Awake()
@@ -37,10 +40,40 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1.0f;
-        passedTime = 30.0f;
-        level = 1;
-        // LoadLevel() 지우지마세요;
-        // levelText.text = $"Lv.{level}" 지우지마세요;
+        LoadLevel();
+        levelText.text = $"Lv.{level}";
+        itemCountText.text = $"X {itemcount}";
+
+        if(level == 1)
+        {
+            passedTime = 60.0f;
+            time = 60.0f;
+            failCount = 30;
+        }
+        else if(level == 2)
+        {
+            passedTime = 60.0f;
+            time = 60.0f;
+            failCount = 20;
+        }
+        else if(level == 3)
+        {
+            passedTime = 40.0f;
+            time = 40.0f;
+            failCount = 20;
+        }
+        else if(level == 4)
+        {
+            passedTime = 40.0f;
+            time = 40.0f;
+            failCount = 10;
+        }
+        else if(level == 5)
+        {
+            passedTime = 30.0f;
+            time = 30.0f;
+            failCount = 5;
+        }
         
 
     }
@@ -52,6 +85,8 @@ public class GameManager : MonoBehaviour
         passedTime -= Time.deltaTime;
         timeText.text = passedTime.ToString("N2");
         timeBar.localScale = new Vector3(-(float.Parse(timeText.text) / time), 1.0f,1.0f);
+        failCountText.text = $"실패 가능 횟수 : {failCount}";
+
         
         if(passedTime < 0.0f)
         {
@@ -76,6 +111,7 @@ public class GameManager : MonoBehaviour
     }
     public void IsMatch()
     {
+    
         if(firstCard.idx == secondCard.idx)
         {
             firstCard.DestroyCard();
@@ -97,34 +133,23 @@ public class GameManager : MonoBehaviour
             failCount --;
             Debug.Log($"{failCount}남았습니다");
             Debug.Log($"[체크] level: {level}");
-
-
-            if(level == 3)
-            {
-                MinusTime();
-            }
-
-            if(level == 1)
-            {   
-                if(failCount <= 0)
-                {
-                    GameOver();
-                }
-            }
             
+            if(failCount == 0)
+            {
+                GameOver();
+            }
 
-
-
-
+        
         }
+
         firstCard = secondCard = null;
     }
 
-    public void MinusTime()
-    {
-        if(firstCard.idx != secondCard.idx)
-        time -= 1.0f;
-    }    
+    // public void MinusTime()
+    // {
+    //     if(firstCard.idx != secondCard.idx)
+    //     time -= 1.0f;
+    // }    
 
     public void GameOver()
     {
