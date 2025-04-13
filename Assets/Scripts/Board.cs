@@ -7,7 +7,7 @@ using UnityEditor.PackageManager;
 public class Board : MonoBehaviour
 {
     [SerializeField] private GameObject cardPrefab;
-    int level = GameManager.Instance.level;
+    // int level = GameManager.Instance.level; 오류 나서 주석처리
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class Board : MonoBehaviour
 
     // Update is called once per frame
 
-    private void CreateCard()
+    void CreateCard()
     {   
         int[] arr = {0, 0 , 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7};
         arr = arr.OrderBy(x => Random.Range(0.0f, 7.0f)).ToArray();
@@ -34,12 +34,9 @@ public class Board : MonoBehaviour
             card.transform.position = new Vector2(x, y);
             card.GetComponent<Card>().Setting(arr[i]);
 
-            // if(level == 3)
-            
-
-
         }
         GameManager.Instance.cardCount = arr.Length;
     }
 
 }
+
