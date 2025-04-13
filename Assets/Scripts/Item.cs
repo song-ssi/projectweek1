@@ -1,67 +1,94 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEngine;
-using UnityEngine.UI;
+// public class Card : MonoBehaviour
+// {
+//     public int cardNum;
+//     public GameObject front;
+//     public GameObject back;
+
+//     // public void OpenCard()
+//     // {
+//     //     front.SetActive(true);
+//     //     back.SetActive(false);
+//     // }
+
+//     // public void CloseCard()
+//     // {
+//     //     front.SetActive(false);
+//     //     back.SetActive(true);
+//     // }
+
+//     // void OnMouseDown()
+//     // {
+//     //     if (!front.activeSelf) // 뒷면일 때만 클릭 허용
+//     //     {
+//     //         GameManager.instance.CardClicked(this);
+//     //     }
+//     // }
 
 
-public class Item : MonoBehaviour
-{
-    Card first = GameManager.Instance.firstCard;
-    Card second = GameManager.Instance.secondCard;
-    
-    public Button rainbowBtn;
+//     using UnityEngine;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+// public class Card : MonoBehaviour
+// {
+//     public int cardNum;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (GameManager.Instance.firstCard != null && GameManager.Instance.secondCard == null)
-        {
-            rainbowBtn.interactable = true;
-        }
-        else
-        {
-            rainbowBtn.interactable = false;
-        }
-        
-    }
-    public void Rainbow()
-    { 
-        if (second != null && first != null)
-        {
-            second.idx = GameManager.Instance.saveidx;
-        }
-//         public void UpdateCardAppearance()
-//         {
-//             front.sprite = Resources.Load<Sprite>("CardImages");
-//             case 0:
-//                 front = Resources.Load<Sprite>("CardImages/Card0");
-//                 break;
-//             case 1:
-//                 frontSprite = Resources.Load<Sprite>("CardImages/Card1");
-//                 break;
-//             // 다른 cardID에 대한 처리를 추가합니다.
-//         }
+//     // public GameObject front; // 앞면 이미지
+//     // public GameObject back;  // 뒷면 이미지
 
-//         // 카드를 보여주기 위해 이미지 갱신
-//         spriteRenderer.sprite = frontSprite;
+//     // void Start()
+//     // {
+//     //     GameManager.instance.RegisterCard(this);
+//     //     CloseCard(); // 시작 시 닫힌 상태로
+//     // }
 
+//     // public void OpenCard()
+//     // {
+//     //     front.SetActive(true);
+//     //     back.SetActive(false);
+//     // }
 
+//     // public void CloseCard()
+//     // {
+//     //     front.SetActive(false);
+//     //     back.SetActive(true);
+//     // }
 
-//  ㅜ
-//         }
-       
+//     // public bool IsOpen()
+//     // {
+//     //     return front.activeSelf;
+//     // }
+
+//     // void OnMouseDown()
+//     // {
+//     //     if (!IsOpen())
+//     //     {
+//     //         GameManager.instance.CardClicked(this);
+//     //     }
 //     }
-        
-//     public void CopyFirstCardToSecond()
-//     {
 
-//     }
-    }
-}
+
+
+// // public void CardClicked(Card clickedCard)
+// // {
+// //     if (hintMode)
+// //     {
+// //         hintMode = false;
+
+// //         clickedCard.OpenCard();
+
+// //         foreach (Card card in allCards)
+// //         {
+// //             if (card != clickedCard && card.cardNum == clickedCard.cardNum)
+// //             {
+// //                 card.OpenCard(); // 짝 카드 자동 공개
+// //                 break;
+// //             }
+// // //         }
+// //     }
+// //     else
+// //     {
+// //         clickedCard.OpenCard();
+// //         // 일반 매칭 게임 로직 진행 (나중에 추가)
+// //     }
+// // }
+
+// // }
