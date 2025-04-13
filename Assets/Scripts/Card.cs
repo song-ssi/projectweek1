@@ -10,12 +10,15 @@ public class Card : MonoBehaviour
     public GameObject front;
     public GameObject back;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     void Start()
     {
 
     }
 
+=======
+>>>>>>> parent of d4ad9f1 (코드수정_승현)
 =======
 >>>>>>> parent of d4ad9f1 (코드수정_승현)
     public void Setting(int number)
@@ -33,6 +36,9 @@ public class Card : MonoBehaviour
   
 =======
         back.SetActive(false);    
+<<<<<<< HEAD
+>>>>>>> parent of d4ad9f1 (코드수정_승현)
+=======
 >>>>>>> parent of d4ad9f1 (코드수정_승현)
 
     

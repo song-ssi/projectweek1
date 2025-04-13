@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     public Card firstCard;
     public Card secondCard;
     public int cardCount;
+<<<<<<< HEAD
     float passedTime;
     public int level = 1;
     public int itemcount = 10;
@@ -36,6 +37,13 @@ public class GameManager : MonoBehaviour
     int failCount; // 실패 가능 횟수
     
 
+=======
+    public int firstCardidx;
+    private int failCount;
+    public int level = 1;
+    public int itemcount = 10;
+    float time;
+>>>>>>> parent of d4ad9f1 (코드수정_승현)
 
 
     private void Awake()
@@ -49,6 +57,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {   
         Time.timeScale = 1.0f;
+<<<<<<< HEAD
         
         GameManager.Instance.OffItemBtn();
         LoadLevel();
@@ -100,6 +109,43 @@ public class GameManager : MonoBehaviour
 
         
         
+=======
+        LoadLevel();
+        levelText.text = $"Lv.{level}";
+        itemCountText.text = $"X {itemcount}";
+
+        if(level == 1)
+        {
+            passedTime = 60.0f;
+            time = 60.0f;
+            failCount = 30;
+        }
+        else if(level == 2)
+        {
+            passedTime = 60.0f;
+            time = 60.0f;
+            failCount = 20;
+        }
+        else if(level == 3)
+        {
+            passedTime = 40.0f;
+            time = 40.0f;
+            failCount = 20;
+        }
+        else if(level == 4)
+        {
+            passedTime = 40.0f;
+            time = 40.0f;
+            failCount = 10;
+        }
+        else if(level == 5)
+        {
+            passedTime = 30.0f;
+            time = 30.0f;
+            failCount = 5;
+        }
+        
+>>>>>>> parent of d4ad9f1 (코드수정_승현)
 
     }
 
@@ -109,7 +155,11 @@ public class GameManager : MonoBehaviour
         timeText.text = passedTime.ToString("N2");
         timeBar.localScale = new Vector3(-(float.Parse(timeText.text) / time), 1.0f, 1.0f);
         failCountText.text = $"실패 가능 횟수 : {failCount}";
+<<<<<<< HEAD
         itemCountText.text = $"X {itemcount}";
+=======
+
+>>>>>>> parent of d4ad9f1 (코드수정_승현)
         
         if(passedTime < 0.0f)
         {
@@ -117,8 +167,11 @@ public class GameManager : MonoBehaviour
         }
 
         if(passedTime < 6.0f)
+<<<<<<< HEAD
 
         if(passedTime < 6.0f)
+=======
+>>>>>>> parent of d4ad9f1 (코드수정_승현)
         {
             Image img = timeBar.GetComponent<Image>();
             img.color = Color.red;
@@ -200,7 +253,16 @@ public class GameManager : MonoBehaviour
         firstCard = secondCard = null;
     }
 
+<<<<<<< HEAD
     // 게임 오버
+=======
+    // public void MinusTime()
+    // {
+    //     if(firstCard.idx != secondCard.idx)
+    //     time -= 1.0f;
+    // }    
+
+>>>>>>> parent of d4ad9f1 (코드수정_승현)
     public void GameOver()
     {
         Time.timeScale = 0.0f;
@@ -251,6 +313,7 @@ public class GameManager : MonoBehaviour
     public void LoadLevel()
     {
         level = PlayerPrefs.GetInt("currentLevel", 1);
+<<<<<<< HEAD
         level = PlayerPrefs.GetInt("currentLevel", 1);
     }
 
@@ -272,6 +335,8 @@ public class GameManager : MonoBehaviour
     void LoadTime()
     {
         passedTime = PlayerPrefs.GetFloat("passedTime", 1.0f);
+=======
+>>>>>>> parent of d4ad9f1 (코드수정_승현)
     }
 
 

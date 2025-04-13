@@ -1870,6 +1870,7 @@ RectTransform:
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1818670449
 GameObject:
   m_ObjectHideFlags: 0
@@ -2164,6 +2165,11 @@ CanvasRenderer:
 --- !u!1001 &1863863619
 PrefabInstance:
   m_ObjectHideFlags: 0
+=======
+--- !u!1001 &1863863619
+PrefabInstance:
+  m_ObjectHideFlags: 0
+>>>>>>> parent of d4ad9f1 (코드수정_승현)
 =======
 --- !u!1001 &1863863619
 PrefabInstance:
@@ -2740,10 +2746,13 @@ RectTransform:
   - {fileID: 766664425}
   - {fileID: 72858971}
 <<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 2110093544}
   - {fileID: 319586105}
   - {fileID: 1818670450}
   - {fileID: 1415991703}
+=======
+>>>>>>> parent of d4ad9f1 (코드수정_승현)
 =======
 >>>>>>> parent of d4ad9f1 (코드수정_승현)
   m_Father: {fileID: 0}
