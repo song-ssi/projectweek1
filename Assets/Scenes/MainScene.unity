@@ -1163,6 +1163,8 @@ MonoBehaviour:
   cardCount: 0
   level: 1
   itemcount: 10
+  matchSound: {fileID: 8300000, guid: a3f9bcfb60a0de14f869eaf404568e72, type: 3}
+  failSound: {fileID: 8300000, guid: 3b8a501224eaa324a9fc0d1fc2ff7dc1, type: 3}
 --- !u!4 &1119494507
 Transform:
   m_ObjectHideFlags: 0
