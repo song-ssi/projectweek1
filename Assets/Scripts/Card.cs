@@ -9,12 +9,15 @@ public class Card : MonoBehaviour
 
     public GameObject front;
     public GameObject back;
+<<<<<<< HEAD
 
     void Start()
     {
 
     }
 
+=======
+>>>>>>> parent of d4ad9f1 (코드수정_승현)
     public void Setting(int number)
     {
         idx = number;
@@ -25,8 +28,12 @@ public class Card : MonoBehaviour
     public void OpenCard()
     {
         front.SetActive(true);
+<<<<<<< HEAD
         back.SetActive(false);
   
+=======
+        back.SetActive(false);    
+>>>>>>> parent of d4ad9f1 (코드수정_승현)
 
     
         if (GameManager.Instance.firstCard == null)

@@ -117,6 +117,8 @@ public class GameManager : MonoBehaviour
         }
 
         if(passedTime < 6.0f)
+
+        if(passedTime < 6.0f)
         {
             Image img = timeBar.GetComponent<Image>();
             img.color = Color.red;
@@ -248,6 +250,7 @@ public class GameManager : MonoBehaviour
     }
     public void LoadLevel()
     {
+        level = PlayerPrefs.GetInt("currentLevel", 1);
         level = PlayerPrefs.GetInt("currentLevel", 1);
     }
 

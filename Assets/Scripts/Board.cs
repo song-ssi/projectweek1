@@ -36,6 +36,10 @@ public class Board : MonoBehaviour
             
 
 
+            // if(level == 3)
+            
+
+
         }
         GameManager.Instance.cardCount = arr.Length;
     }
