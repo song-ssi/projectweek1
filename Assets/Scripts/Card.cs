@@ -9,10 +9,13 @@ public class Card : MonoBehaviour
 
     public GameObject front;
     public GameObject back;
+    public Animator anim;
+    AudioSource audioSource;
+    public AudioClip clip;
 
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Setting(int number)
@@ -24,9 +27,10 @@ public class Card : MonoBehaviour
 
     public void OpenCard()
     {
+        audioSource.PlayOneShot(clip);
         front.SetActive(true);
         back.SetActive(false);
-  
+        //anim.SetTrigger("Open");
 
     
         if (GameManager.Instance.firstCard == null)
@@ -73,5 +77,6 @@ public class Card : MonoBehaviour
     {
         front.SetActive(false);
         back.SetActive(true);
+        //anim.SetTrigger("Close");
     }
 }
